@@ -39,7 +39,57 @@
   canvas.height = window.innerHeight;
   
   var ctx = canvas.getContext('2d');
-
+  
+  
+  
+  var goalX = Math.random() * window.innerWidth;
+  
+  var goalY = Math.random() * window.innerHeigt;
+  
+  var playerSize = 25;
+  
+  var goal Size = 15;
+  
+  
+  var speed = 3;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    if(Key.isDown(Key.UP)){
+      y-=speed;
+    }
+    if(Key.isDown(Key.DOWN)){
+      y+=speed;
+    }
+    if(Key.isDown(Key.LEFT)){
+      x-=speed;
+    }
+    if(Key.isDown(Key.RIGHT)){
+      x+=speed;
+    }
+    
+    if ((Math.abs(x-goalX))**2 + (Math.abs(y-goalY))**2 < (playerSize+goalSize)**2){
+      playerSize += 5;
+      
+      goalX = Math.random() * canvas.width;
+      
+      goalY = Math.random() * canas.width;
+    }
+    var character = new Path2D();
+    
+    goal.arc(goalX, goalY, goalSize, 0, 2 * Math.PI)
+    
+    var goal = new Path2D();
+    
+    goal.arc(goalX, goalY, goalSize, 0, 2 * Math.PI)
+    
+    ctx.fill(character);
+    ctx.fillStyle = "#FF0000"
+    cctx.fill(goal)
+  }
+  setInterval(draw, 10);
+ 
+    
 </script>
 
 </body>
