@@ -1,31 +1,50 @@
 <html>
 <body>
-
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
+  <canvas id = "game"></canvas>
+<script>
+  var Key = {
+  _pressed: {},
+  
+  LEFT: 37,
+  UP: 38,
+  RIGHT: 39,
+  DOWN: 40,
+  
+  isDown: function(keyCode){
+    return this._pressed[keyCode];
+  },
+  
+  onKeydown: function(event) {
+    this._pressed[event.keyCode] = true;
+  },
+  
+  onKeyup: function(event) {
+    delete this._pressed[event.keyCode];
+  }
+ };
+  
+  window.addEventListener('keyup', function(event) {Key.onKeyup(event); }, false);
+  window.addEventListener('keydown', function(event) {Key.onKeydown(event); }, false);
+  
+  var x = 50;
+  var y = 50;
+  
+  var canvas = document.getElementById('game');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  var ctx = canvas.getContext('2d');
 
-<h1>CATS</h1>
+</script>
 
-<p>Cats are wonderful sometimes elegent creature with ferce preditiors for ansestors. House cats hunt tirelessly for... a can of food.
+</body>
 
-MOST IMPORTANTLY!!! Cats sleep about 25 hours a day for 8 days a week and 13 months a year. </p>
-
-
-
-
-
-<button onclick="window.location.href='https://www.youtube.com/watch?v=XyNlqQId-nk'">Funny cats</button>
-<br>
-<button onclick="window.location.href='https://youtu.be/V4hqcTWoM4c'">Smart cats?</button>
-<br>
-<button onclick="window.location.href='https://www.youtube.com/watch?v=7ZsAUMBMSKg'">High jumping cats</button>
-
-
-
-
-
-
+</html>
 
 
 
