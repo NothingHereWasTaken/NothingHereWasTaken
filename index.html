@@ -83,9 +83,17 @@ canvas {border: 10px solid black;}
       
       goalY = Math.random() * canvas.height;
     }
-    var character = new Path2D();
-    
-    character.arc(x, y, playerSize, 0, 2 * Math.PI)
+    var character = new Image();
+    toggle += 1;
+    toggle %= 100;
+    if(toggle > 50){
+    character.src = 'Blob.png';
+    } else {
+    character.src = 'Blob2.png';
+    character.addEventListener('load', function() {
+       // execute drawImage statements here
+    ctx.drawImage(character, x, y);
+    }, false);
     
     var goal = new Path2D();
     
