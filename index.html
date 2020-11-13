@@ -91,13 +91,11 @@ canvas {border: 10px solid black;}
     toggle += 1;
     toggle %= 100;
     if(toggle > 50){
-    character.src = 'Blob.png';
+     var character = document.getElementById("link1");
     } else {
-    character.src = 'Blob2.png';}
-    character.addEventListener('load', function() {
-       // execute drawImage statements here
+     var character = documant.getElementById("link2");
     ctx.drawImage(character, x, y);
-    }, false);
+    
     
     var goal = new Path2D();
     
