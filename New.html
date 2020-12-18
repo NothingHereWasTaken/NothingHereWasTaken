@@ -168,10 +168,10 @@ canvas{ border: 2px solid black;}
     var character = document.getElementById("link2");}
     //character.addEventListener('load', function() {
      // execute drawImage statements here
+    ctx.save(); 
     ctx.scale(2, 2);
     ctx.drawImage(character, x, y);
-    ctx.scale(1, 1)
-     
+    ctx.restore(); 
     var goal = new Path2D();
     goal.arc(goalX, goalY, goalSize, 0, 2 * Math.PI);
     
