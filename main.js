@@ -47,7 +47,7 @@ function draw(){
 
     if(player.x<0 ||player.x >1000 - playerImage.width && player.dazed <= 0){
         player.xVel *= -1;
-        player.dazed = 30;
+        player.dazed = 0;
     }
    meteors.forEach(meteor => {
        image(meteorImage,meteor.x,meteor.y,48,48);
@@ -64,7 +64,7 @@ function draw(){
         stroke(255);
         strokeWeight(3);
         rect(meteor.x,meteor.y,48,48);
-       meteor.yVel += 0.25;
+       meteor.yVel = 4;
        meteor.y += meteor.yVel;
 
    });
