@@ -46,7 +46,7 @@ function draw(){
     player.dazed-=1;
 
     if(player.x<0 ||player.x >1000 - playerImage.width && player.dazed <= 0){
-        player.xVel *= -1;
+        player.xVel *= -10;
         player.dazed = 0;
     }
    meteors.forEach(meteor => {
