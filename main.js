@@ -2,6 +2,7 @@ let stars;
 let playerImage;
 let meteorImage;
 let meteorChance = 0.02;
+let score = 0.let GAMEOVER = 0
 let player = {
     x:500,
     y:550,
@@ -25,6 +26,7 @@ function setup(){
     createCanvas(1000,700);
 }
 function draw(){
+    if(GAMEOVER == 0){
     background(0);
     image(stars,0,0,1000,700);
     image(playerImage, player.x, player.y);
@@ -92,6 +94,10 @@ function keyPressed(){
 
 function keyReleased(){
     keysPressed[key] = false;
+}
+
+if (player <= 0){
+    GAMEOVER = 1
 }
 
 function overlappingRects(x1, y1, w1, h1, x2, y2, w2, h2) {
