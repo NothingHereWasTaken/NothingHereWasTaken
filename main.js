@@ -2,7 +2,8 @@ let stars;
 let playerImage;
 let meteorImage;
 let meteorChance = 0.02;
-let score = 0.let GAMEOVER = 0
+let score = 0;
+let GAMEOVER = 0;
 let player = {
     x:500,
     y:550,
@@ -83,6 +84,7 @@ function draw(){
         yVel : 0
        })
    }
+}
    if (Math.random()<0.005){
        meteorChance += 0.01;
    }
