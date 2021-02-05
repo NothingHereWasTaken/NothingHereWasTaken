@@ -79,13 +79,11 @@ function draw(){
    });
    meteors.forEach((meteor,i) =>{
        if(meteor.y> height){
-           meteors.splice(i,1);
+        meteors.splice(i,1);
+        score +=1;
        }
    })
-   if(meteor.y> height){
-       meteors.splice(i,1);
-       score +=1;
-   }
+   
 
 
    if(Math.random()<meteorChance){
