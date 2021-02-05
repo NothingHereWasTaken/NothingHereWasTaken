@@ -98,9 +98,12 @@ function draw(){
 }
    if (Math.random()<0.005){
        meteorChance += 0.01;
-   }
+     
+    if (player.hp <= 0){
+        GAMEOVER = 1
+    } 
 }
-
+}
 function keyPressed(){
     keysPressed[key]  = true;
 }
@@ -109,9 +112,7 @@ function keyReleased(){
     keysPressed[key] = false;
 }
 
-if (player <= 0){
-    GAMEOVER = 1
-}
+
 
 function overlappingRects(x1, y1, w1, h1, x2, y2, w2, h2) {
     
